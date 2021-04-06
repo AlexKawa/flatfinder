@@ -2,38 +2,40 @@ import React from "react";
 import styled from "styled-components";
 import * as Icons from "./icons";
 
-type Props = {
+interface Props {
   name: string;
   className?: string;
   color: string;
   size: string;
-};
-
-interface ISizes {
-  [index: string]: number;
 }
+
+type Sizes = {
+  [index: string]: number;
+};
 
 const SIZES = {
   default: 22,
+  medium: 30,
   large: 40,
-} as ISizes;
+} as Sizes;
 
 const getIcon = (name: string) =>
-  /* @ts-ignore:disable-next-line */
+  // TODO Find solution
+  /* @ts-ignore:disable-next-line  */
   Icons[name.charAt(0).toUpperCase() + name.slice(1)];
 
 const Wrapper = styled("i")<{ color: string; size: string }>`
   display: inline-block;
-  color: ${(props) => props.theme[props.color] || "inherit"};
+  color: ${(props) => props.theme[props.color] || props.color || "inherit"};
   width: ${(props) => SIZES[props.size]}px;
   height: ${(props) => SIZES[props.size]}px;
-  transtion: color 0.5s ease;
+  transition: color 0.5s ease;
 
   & > svg {
     width: ${(props) => SIZES[props.size]}px;
     height: ${(props) => SIZES[props.size]}px;
     vertical-align: top;
-    color: ${(props) => props.theme[props.color] || "inherit"};
+    color: ${(props) => props.theme[props.color] || props.color || "inherit"};
   }
 `;
 
