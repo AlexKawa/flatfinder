@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
 
 import RoundButton from "./RoundButton";
 import Icon from "./Icon";
 
-const Wrapper = styled.div`
+const Wrapper = styled("div")<{ visible: boolean }>`
   background-color: ${(props) => props.theme.backgroundSecondary};
   border-radius: 10px;
   padding: 45px 20px;
@@ -15,6 +15,8 @@ const Wrapper = styled.div`
   left: 20px;
   display: flex;
   flex-direction: column;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  transition: opacity 0.5s ease;
 `;
 
 const Close = styled(RoundButton)`
@@ -53,9 +55,11 @@ const Action = styled(RoundButton)`
 `;
 
 const Wizard = () => {
+  const [isWizardOpen, setWizardOpen] = useState(true);
+
   return (
-    <Wrapper>
-      <Close>
+    <Wrapper visible={isWizardOpen}>
+      <Close onClick={() => setWizardOpen(false)}>
         <Icon name="Close" color="secondary" />
       </Close>
       <Headline>
@@ -64,8 +68,12 @@ const Wizard = () => {
       <SubTitle>
         <FormattedMessage id={`wizard.help`} />
       </SubTitle>
-      <Action>Wohnfläche</Action>
-      <Action>Anzahl Räume</Action>
+      <Action onClick={() => {}} active>
+        Wohnfläche
+      </Action>
+      <Action onClick={() => {}} active>
+        Anzahl Räume
+      </Action>
     </Wrapper>
   );
 };

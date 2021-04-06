@@ -22,3 +22,13 @@ export const flattenMessages = (
     return messages;
   }, {});
 };
+
+export const routeWithParams = (url: string, params = {}) => {
+  console.log(params);
+  return Object.entries(params || {}).reduce((acc, [key, value]) => {
+    const search = new RegExp(`:${key}`);
+    // TODO Find solution
+    /* @ts-ignore:disable-next-line  */
+    return acc.replace(search, value);
+  }, url);
+};
