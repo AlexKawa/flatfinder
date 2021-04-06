@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../assets/logo.png";
+import logo from "assets/logo.png";
 
 import Menu from "./Menu";
 import Aside from "./Aside";
@@ -31,11 +31,8 @@ const HeaderBar = () => {
   return (
     <Wrapper>
       <Logo src={logo} alt="Logo" />
-
-      {/* Desktop only */}
-      <Aside />
-      {/* Mobile Only */}
-      <Menu />
+      <Aside /> {/* Desktop only */}
+      <Menu /> {/* Mobile Only */}
     </Wrapper>
   );
 };

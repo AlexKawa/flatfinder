@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
-import Icon from "../Icon";
+import Icon from "components/Icon";
 
 const Action = styled.div`
   position: absolute;

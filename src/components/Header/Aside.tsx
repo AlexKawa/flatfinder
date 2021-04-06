@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
 
-import RoundButton from "../RoundButton";
-import Icon from "../Icon";
+import RoundButton from "components/RoundButton";
+import Icon from "components/Icon";
 
 const Wrapper = styled.aside`
   height: 100%;
@@ -61,12 +61,11 @@ const Aside = () => (
       <FormattedMessage id={`menu.presentedBy`} />
     </Info>
     <Actions>
-      <Action>
+      <Action onClick={() => {}}>
         <FormattedMessage id={`menu.contact`} />
         <Icon name="Post" />
       </Action>
-
-      <Action>EN</Action>
+      <Action onClick={() => {}}>EN</Action>
     </Actions>
   </Wrapper>
 );
