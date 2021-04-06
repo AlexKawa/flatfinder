@@ -6,6 +6,7 @@ const getTheme = () => {
     backgroundSecondary: "#FFFFFF",
     backgroundInvert: "#DDD4CC",
     success: "#33CF85",
+    reserved: "#F2994A",
     danger: "#CE5454",
     medium: "#7F8188",
     dark: "#343438",
@@ -19,8 +20,9 @@ const getTheme = () => {
     textMedium: "#7D7D7D",
     textHighlight: "#FFFFFF",
     colorDifference: "rgba(25, 89, 253, 0.1)",
+    tiles: "rgba(242, 242, 242, 0.2)",
     tilesDarken: "rgba(218, 215, 215, 0.2)",
-    succesDark: "#EFF6E9",
+    successDark: "#EFF6E9",
     reservedDark: "#F6F2E9",
   };
 
@@ -31,7 +33,10 @@ const getTheme = () => {
       tiny: "10px",
       small: "12px",
       default: fontSize,
-      bigger: "24px",
+      medium: "16px",
+      bigger: "18px",
+      large: "20px",
+      huge: "24px",
     },
   };
 
