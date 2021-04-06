@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 import Icon from "./Icon";
 
-type Props = {
+interface Props {
   className?: string;
   icon: string;
   active: boolean;
-};
+}
 
 const Button = styled("button")<{ active: boolean }>`
   flex: 1;
